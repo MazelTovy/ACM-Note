@@ -1,0 +1,709 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>刘汝佳紫书题单(算法竞赛入门经典 第二版 2014)</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='刘汝佳紫书题单算法竞赛入门经典-第二版-2014httpsvjudgecsgrandeurcnarticle45'><a href='https://vjudge.csgrandeur.cn/article/45'><span>刘汝佳紫书题单(算法竞赛入门经典 第二版 2014)</span></a></h1><h2 id='第章注意事项'><span>第〇章：注意事项</span></h2><p><span>括号内容为作者在书上写出的要求，若有错误敬请指出。</span>
+<span>带星号的题目星星打在题号之前。</span></p><ul><li><span>作者给出的例题程序：</span><a href='https://github.com/aoapc-book/aoapc-bac2nd' target='_blank' class='url'>https://github.com/aoapc-book/aoapc-bac2nd</a></li><li><span>陈锋给出的习题各程序及选解（绿书的github）：</span><a href='https://github.com/sukhoeing/aoapc-bac2nd-keys' target='_blank' class='url'>https://github.com/sukhoeing/aoapc-bac2nd-keys</a></li></ul><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.2px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">若对紫书绿书有修改建议或意见，可以直接到绿书github的issue上提出。</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><h2 ><span>第三章：数组和字符串</span></h2><p><span>例题部分：</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-272'><strong><span>UVA 272</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10082'><strong><span>UVA 10082</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-401'><strong><span>UVA 401</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-340'><strong><span>UVA 340</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1583'><strong><span>UVA 1583</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1584'><strong><span>UVA 1584</span></strong></a>
+<span>习题部分：（选择其中8题完成）</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-1585'><strong><span>UVA 1585</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1586'><strong><span>UVA 1586</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1225'><strong><span>UVA 1225</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-455'><strong><span>UVA 455</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-227'><strong><span>UVA 227</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-232'><strong><span>UVA 232</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1368'><strong><span>UVA 1368</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-202'><strong><span>UVA 202</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-10340'><strong><span>UVA 10340</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1587'><strong><span>UVA 1587</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1588'><strong><span>UVA 1588</span></strong></a><span> </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-11809'><strong><span>UVA 11809</span></strong></a></p><h2 id='第四章函数和递归'><span>第四章：函数和递归</span></h2><p><span>例题部分：</span>
+<span>（必须完成） </span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1339'><strong><span>UVA 1339</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-489'><strong><span>UVA 489</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-133'><strong><span>UVA 133</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-213'><strong><span>UVA 213</span></strong></a>
+<span>（可选完成）</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-512'><strong><span>UVA 512</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12412'><strong><span>UVA 12412</span></strong></a>
+<span>习题：（选3）</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1589'><strong><span>UVA 1589</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-201'><strong><span>UVA 201</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-220'><strong><span>UVA 220</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-253'><strong><span>UVA 253</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1590'><strong><span>UVA 1590</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-508'><strong><span>UVA 508</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-509'><strong><span>UVA 509</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12108'><strong><span>UVA 12108</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1591'><strong><span>UVA 1591</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-815'><strong><span>UVA 815</span></strong></a></p><h2 id='第五章c与stl入门'><span>第五章：C++与STL入门</span></h2><p><span>例题部分：</span>
+<span>（必须完成）</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-10474'><strong><span>UVA 10474</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-101'><strong><span>UVA 101</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10815'><strong><span>UVA 10815</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-156'><strong><span>UVA 156</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12096'><strong><span>UVA 12096</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-540'><strong><span>UVA 540</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-136'><strong><span>UVA 136</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-400'><strong><span>UVA 400</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1592'><strong><span>UVA 1592</span></strong></a>
+<span>（可选完成）</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-207'><strong><span>UVA 207</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-814'><strong><span>UVA 814</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-221'><strong><span>UVA 221</span></strong></a>
+<span>习题部分：（选8建议12）</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-1593'><strong><span>UVA 1593</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1594'><strong><span>UVA 1594</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10935'><strong><span>UVA 10935</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10763'><strong><span>UVA 10763</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10391'><strong><span>UVA 10391</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1595'><strong><span>UVA 1595</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12100'><strong><span>UVA 12100</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-230'><strong><span>UVA 230</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1596'><strong><span>UVA 1596</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1597'><strong><span>UVA 1597</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12504'><strong><span>UVA 12504</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-511'><strong><span>UVA 511</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-822'><strong><span>UVA 822</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1598'><strong><span>UVA 1598</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12333'><strong><span>UVA 12333</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-212'><strong><span>UVA 212</span></strong></a></p><h2 id='第六章数据结构基础'><span>第六章：数据结构基础</span></h2><p><span>例题部分：</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-210'><strong><span>UVA 210</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-514'><strong><span>UVA 514</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-442'><strong><span>UVA 442</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11988'><strong><span>UVA 11988</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12657'><strong><span>UVA 12657</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-679'><strong><span>UVA 679</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-122'><strong><span>UVA 122</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-548'><strong><span>UVA 548</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-839'><strong><span>UVA 839</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-699'><strong><span>UVA 699</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-297'><strong><span>UVA 297</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-572'><strong><span>UVA 572</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1103'><strong><span>UVA 1103</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-816'><strong><span>UVA 816</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10305'><strong><span>UVA 10305</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10129'><strong><span>UVA 10129</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10562'><strong><span>UVA 10562</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-12171'><strong><span>UVA 12171</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1572'><strong><span>UVA 1572</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1599'><strong><span>UVA 1599</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-506'><strong><span>UVA 506</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-11853'><strong><span>UVA 11853</span></strong></a>
+<span>习题部分：（8最好10）</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-673'><strong><span>UVA 673</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-712'><strong><span>UVA 712</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-536'><strong><span>UVA 536</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-439'><strong><span>UVA 439</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1600'><strong><span>UVA 1600</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12166'><strong><span>UVA 12166</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-804'><strong><span>UVA 804</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-806'><strong><span>UVA 806</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-127'><strong><span>UVA 127</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-246'><strong><span>UVA 246</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10410'><strong><span>UVA 10410</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-810'><strong><span>UVA 810</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-215'><strong><span>UVA 215</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12118'><strong><span>UVA 12118</span></strong></a></p><h2 id='第七章暴力求解法'><span>第七章：暴力求解法</span></h2><p><span>例题部分：</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-725'><strong><span>UVA 725</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11059'><strong><span>UVA 11059</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10976'><strong><span>UVA 10976</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-524'><strong><span>UVA 524</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-129'><strong><span>UVA 129</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-140'><strong><span>UVA 140</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1354'><strong><span>UVA 1354</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10603'><strong><span>UVA 10603</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1601'><strong><span>UVA 1601</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11212'><strong><span>UVA 11212</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12325'><strong><span>UVA 12325</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1343'><strong><span>UVA 1343</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1374'><strong><span>UVA 1374</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1602'><strong><span>UVA 1602</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1603'><strong><span>UVA 1603</span></strong></a>
+<span>习题部分：（5最好10）</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-208'><strong><span>UVA 208</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-225'><strong><span>UVA 225</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-211'><strong><span>UVA 211</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-818'><strong><span>UVA 818</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-690'><strong><span>UVA 690</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12113'><strong><span>UVA 12113</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12558'><strong><span>UVA 12558</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12107'><strong><span>UVA 12107</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1604'><strong><span>UVA 1604</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11214'><strong><span>UVA 11214</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12569'><strong><span>UVA 12569</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1533'><strong><span>UVA 1533</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-817'><strong><span>UVA 817</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-307'><strong><span>UVA 307</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11882'><strong><span>UVA 11882</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11846'><strong><span>UVA 11846</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11694'><strong><span>UVA 11694</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10384'><strong><span>UVA 10384</span></strong></a></p><h2 id='第八章高效算法设计'><span>第八章：高效算法设计</span></h2><p><a href='https://vjudge.csgrandeur.cn/problem/UVA-120'><strong><span>UVA 120</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1605'><strong><span>UVA 1605</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1152'><strong><span>UVA 1152</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-11134'><strong><span>UVA 11134</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11054'><strong><span>UVA 11054</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1606'><strong><span>UVA 1606</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11572'><strong><span>UVA 11572</span></strong></a><strong><span>[</span></strong><span>UVA 1471</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1471' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1471</a><span>)</span></strong><a href='https://vjudge.csgrandeur.cn/problem/UVA-1451'><strong><span>UVA 1451</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-714'><strong><span>UVA 714</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10954'><strong><span>UVA 10954</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12627'><strong><span>UVA 12627</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11093'><strong><span>UVA 11093</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1607'><strong><span>UVA 1607</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12174'><strong><span>UVA 12174</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1608'><strong><span>UVA 1608</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1609'><strong><span>UVA 1609</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1442'><strong><span>UVA 1442</span></strong></a><strong><span>[</span></strong><span>UVA 12265</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-12265' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-12265</a><span>)</span>
+<span>习题部分：（阅读所有，尽量去做）</span>
+<span>[</span></strong><span>UVA 1149</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1149' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1149</a><span>)[</span></strong><span>UVA 1610</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1610' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1610</a><span>)[</span></strong><span>UVA 12545</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-12545' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-12545</a><span>)[</span></strong><span>UVA 11491</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-11491' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-11491</a><span>)[</span></strong><span>UVA 177</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-177' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-177</a><span>)[</span></strong><span>UVA 1611</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1611' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1611</a><span>)[</span></strong><span>UVA 11925</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-11925' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-11925</a><span>)[</span></strong><span>UVA 1612</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1612' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1612</a><span>)[</span></strong><span>UVA 1613</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1613' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1613</a><span>)[</span></strong><span>UVA 1614</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1614' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1614</a><span>)[</span></strong><span>UVA 1615</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1615' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1615</a><span>)[</span></strong><span>UVA 1153</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1153' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1153</a><span>)[</span></strong><span>UVA 10570</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-10570' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-10570</a><span>)[</span></strong><span>UVA 1616</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1616' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1616</a><span>)[</span></strong><span>UVA 1617</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1617' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1617</a><span>)[</span></strong><span>UVA 1618</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1618' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1618</a><span>)[</span></strong><span>UVA 11536</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-11536' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-11536</a><span>)[</span></strong><span>UVA 1619</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1619' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1619</a><span>)[</span></strong><span>UVA 1312</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1312' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1312</a><span>)[</span></strong><span>UVA 1620</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1620' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1620</a><span>)[</span></strong><span>UVA 1621</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1621' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1621</a><span>)[</span></strong><span>UVA 1622</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1622' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1622</a><span>)[</span></strong><span>UVA 1623</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1623' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1623</a><span>)[</span></strong><span>UVA 10366</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-10366' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-10366</a><span>)[</span></strong><span>UVA 11175</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-11175' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-11175</a><span>)[</span></strong><span>UVA 12559</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-12559' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-12559</a><span>)[</span></strong><span>UVA 1580</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1580' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1580</a><span>)[</span></strong><span>UVA 1624**](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1624' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1624</a><span>)</span></p><h2 id='第九章动态规划初步'><span>第九章：动态规划初步</span></h2><p><span>例题部分：</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-1025'><strong><span>UVA 1025</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-437'><strong><span>UVA 437</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1347'><strong><span>UVA 1347</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-116'><strong><span>UVA 116</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12563'><strong><span>UVA 12563</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11400'><strong><span>UVA 11400</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11584'><strong><span>UVA 11584</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1625'><strong><span>UVA 1625</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10003'><strong><span>UVA 10003</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1626'><strong><span>UVA 1626</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1331'><strong><span>UVA 1331</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12186'><strong><span>UVA 12186</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1220'><strong><span>UVA 1220</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1218'><strong><span>UVA 1218</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10817'><strong><span>UVA 10817</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1252'><strong><span>UVA 1252</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1412'><strong><span>UVA 1412</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10618'><strong><span>UVA 10618</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1627'><strong><span>UVA 1627</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10934'><strong><span>UVA 10934</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1336'><strong><span>UVA 1336</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12105'><strong><span>UVA 12105</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1204'><strong><span>UVA 1204</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-12099'><strong><span>UVA 12099</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-12170'><strong><span>UVA 12170</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1380'><strong><span>UVA 1380</span></strong></a><strong><span>[</span></strong><span>UVA 10559</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-10559' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-10559</a><span>)*[</span></strong><span>UVA 1439</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1439' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1439</a><span>)</span></strong><a href='https://vjudge.csgrandeur.cn/problem/UVA-1228'><strong><span>UVA 1228</span></strong></a><strong><span>[</span></strong><span>UVA 1375</span><strong><span>](</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1375' target='_blank' class='url'>https://vjudge.csgrandeur.cn/problem/UVA-1375</a><span>)</span></strong><a href='https://vjudge.csgrandeur.cn/problem/UVA-1628'><strong><span>UVA 1628</span></strong></a>
+<span>习题部分：（阅读所有，认真思考每一道题）</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-10285'><strong><span>UVA 10285</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10118'><strong><span>UVA 10118</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1629'><strong><span>UVA 1629</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1630'><strong><span>UVA 1630</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-242'><strong><span>UVA 242</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10723'><strong><span>UVA 10723</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1631'><strong><span>UVA 1631</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1632'><strong><span>UVA 1632</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10163'><strong><span>UVA 10163</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10641'><strong><span>UVA 10641</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1633'><strong><span>UVA 1633</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12093'><strong><span>UVA 12093</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1289'><strong><span>UVA 1289</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1543'><strong><span>UVA 1543</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12589'><strong><span>UVA 12589</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1634'><strong><span>UVA 1634</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10271'><strong><span>UVA 10271</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1379'><strong><span>UVA 1379</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1443'><strong><span>UVA 1443</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12222'><strong><span>UVA 12222</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1371'><strong><span>UVA 1371</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1579'><strong><span>UVA 1579</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1322'><strong><span>UVA 1322</span></strong></a></p><h2 id='第十章数学概念与方法'><span>第十章：数学概念与方法</span></h2><p><span>例题部分：</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-11582'><strong><span>UVA 11582</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12169'><strong><span>UVA 12169</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10375'><strong><span>UVA 10375</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10791'><strong><span>UVA 10791</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12716'><strong><span>UVA 12716</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1635'><strong><span>UVA 1635</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10820'><strong><span>UVA 10820</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1262'><strong><span>UVA 1262</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1636'><strong><span>UVA 1636</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10491'><strong><span>UVA 10491</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11181'><strong><span>UVA 11181</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1637'><strong><span>UVA 1637</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-580'><strong><span>UVA 580</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12034'><strong><span>UVA 12034</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1638'><strong><span>UVA 1638</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12230'><strong><span>UVA 12230</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1639'><strong><span>UVA 1639</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10288'><strong><span>UVA 10288</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-11346'><strong><span>UVA 11346</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-10900'><strong><span>UVA 10900</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-11971'><strong><span>UVA 11971</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1640'><strong><span>UVA 1640</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10213'><strong><span>UVA 10213</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1641'><strong><span>UVA 1641</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1363'><strong><span>UVA 1363</span></strong></a><span>*</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-11440'><strong><span>UVA 11440</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10214'><strong><span>UVA 10214</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1393'><strong><span>UVA 1393</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1642'><strong><span>UVA 1642</span></strong></a>
+<span>习题部分：（阅读所有题目，寻找感兴趣的做）</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-11040'><strong><span>UVA 11040</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-808'><strong><span>UVA 808</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1643'><strong><span>UVA 1643</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1644'><strong><span>UVA 1644</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1213'><strong><span>UVA 1213</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1210'><strong><span>UVA 1210</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10539'><strong><span>UVA 10539</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10622'><strong><span>UVA 10622</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-294'><strong><span>UVA 294</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1645'><strong><span>UVA 1645</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1646'><strong><span>UVA 1646</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-557'><strong><span>UVA 557</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11526'><strong><span>UVA 11526</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10886'><strong><span>UVA 10886</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12063'><strong><span>UVA 12063</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1647'><strong><span>UVA 1647</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11105'><strong><span>UVA 11105</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10837'><strong><span>UVA 10837</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10868'><strong><span>UVA 10868</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1648'><strong><span>UVA 1648</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1649'><strong><span>UVA 1649</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10640'><strong><span>UVA 10640</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10479'><strong><span>UVA 10479</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-766'><strong><span>UVA 766</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1575'><strong><span>UVA 1575</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12520'><strong><span>UVA 12520</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1390'><strong><span>UVA 1390</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1650'><strong><span>UVA 1650</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11982'><strong><span>UVA 11982</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12371'><strong><span>UVA 12371</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12590'><strong><span>UVA 12590</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1414'><strong><span>UVA 1414</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1651'><strong><span>UVA 1651</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12212'><strong><span>UVA 12212</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1282'><strong><span>UVA 1282</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1652'><strong><span>UVA 1652</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1653'><strong><span>UVA 1653</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10824'><strong><span>UVA 10824</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11186'><strong><span>UVA 11186</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12535'><strong><span>UVA 12535</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1406'><strong><span>UVA 1406</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12508'><strong><span>UVA 12508</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1654'><strong><span>UVA 1654</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11246'><strong><span>UVA 11246</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11166'><strong><span>UVA 11166</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11895'><strong><span>UVA 11895</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11429'><strong><span>UVA 11429</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1655'><strong><span>UVA 1655</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1656'><strong><span>UVA 1656</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11303'><strong><span>UVA 11303</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1657'><strong><span>UVA 1657</span></strong></a></p><h2 id='第十一章图论模型与算法'><span>第十一章：图论模型与算法</span></h2><p><span>例题部分：</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-12219'><strong><span>UVA 12219</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1395'><strong><span>UVA 1395</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1151'><strong><span>UVA 1151</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-247'><strong><span>UVA 247</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10048'><strong><span>UVA 10048</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-658'><strong><span>UVA 658</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-753'><strong><span>UVA 753</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11082'><strong><span>UVA 11082</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1658'><strong><span>UVA 1658</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1349'><strong><span>UVA 1349</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12661'><strong><span>UVA 12661</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1515'><strong><span>UVA 1515</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-10735'><strong><span>UVA 10735</span></strong></a><em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1279'><strong><span>UVA 1279</span></strong></a></em><a href='https://vjudge.csgrandeur.cn/problem/UVA-1659'><strong><span>UVA 1659</span></strong></a>
+<span>习题部分：（10最好15）</span>
+<a href='https://vjudge.csgrandeur.cn/problem/UVA-821'><strong><span>UVA 821</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1001'><strong><span>UVA 1001</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-820'><strong><span>UVA 820</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1660'><strong><span>UVA 1660</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1661'><strong><span>UVA 1661</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1662'><strong><span>UVA 1662</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10801'><strong><span>UVA 10801</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1663'><strong><span>UVA 1663</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12549'><strong><span>UVA 12549</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12264'><strong><span>UVA 12264</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1664'><strong><span>UVA 1664</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1665'><strong><span>UVA 1665</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1666'><strong><span>UVA 1666</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1667'><strong><span>UVA 1667</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1668'><strong><span>UVA 1668</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1669'><strong><span>UVA 1669</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1670'><strong><span>UVA 1670</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12214'><strong><span>UVA 12214</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1518'><strong><span>UVA 1518</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12433'><strong><span>UVA 12433</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11671'><strong><span>UVA 11671</span></strong></a></p><h2 id='第十二章-高级专题'><span>第十二章 高级专题</span></h2><p><span>例题：</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1671'><strong><span>UVA 1671</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1672'><strong><span>UVA 1672</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1673'><strong><span>UVA 1673</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12161'><strong><span>UVA 12161</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11994'><strong><span>UVA 11994</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1674'><strong><span>UVA 1674</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12538'><strong><span>UVA 12538</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-805'><strong><span>UVA 805</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1675'><strong><span>UVA 1675</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12314'><strong><span>UVA 12314</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1520'><strong><span>UVA 1520</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1676'><strong><span>UVA 1676</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11998'><strong><span>UVA 11998</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1104'><strong><span>UVA 1104</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12567'><strong><span>UVA 12567</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12110'><strong><span>UVA 12110</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12253'><strong><span>UVA 12253</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12164'><strong><span>UVA 12164</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1677'><strong><span>UVA 1677</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1678'><strong><span>UVA 1678</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1679'><strong><span>UVA 1679</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12162'><strong><span>UVA 12162</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1017'><strong><span>UVA 1017</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1286'><strong><span>UVA 1286</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1288'><strong><span>UVA 1288</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12565'><strong><span>UVA 12565</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11188'><strong><span>UVA 11188</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12308'><strong><span>UVA 12308</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1680'><strong><span>UVA 1680</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1097'><strong><span>UVA 1097</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1681'><strong><span>UVA 1681</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11199'><strong><span>UVA 11199</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1682'><strong><span>UVA 1682</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11521'><strong><span>UVA 11521</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12417'><strong><span>UVA 12417</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12666'><strong><span>UVA 12666</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12731'><strong><span>UVA 12731</span></strong></a>
+<span>额外的题目：</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-1683'><strong><span>UVA 1683</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12629'><strong><span>UVA 12629</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12698'><strong><span>UVA 12698</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12711'><strong><span>UVA 12711</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12713'><strong><span>UVA 12713</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12513'><strong><span>UVA 12513</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11594'><strong><span>UVA 11594</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12415'><strong><span>UVA 12415</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11993'><strong><span>UVA 11993</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10766'><strong><span>UVA 10766</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11118'><strong><span>UVA 11118</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11915'><strong><span>UVA 11915</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1684'><strong><span>UVA 1684</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1685'><strong><span>UVA 1685</span></strong></a>
+<span>习题：</span><a href='https://vjudge.csgrandeur.cn/problem/UVA-12306'><strong><span>UVA 12306</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1686'><strong><span>UVA 1686</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1687'><strong><span>UVA 1687</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12227'><strong><span>UVA 12227</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1688'><strong><span>UVA 1688</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1689'><strong><span>UVA 1689</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-11425'><strong><span>UVA 11425</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1570'><strong><span>UVA 1570</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1690'><strong><span>UVA 1690</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1573'><strong><span>UVA 1573</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1691'><strong><span>UVA 1691</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1692'><strong><span>UVA 1692</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1693'><strong><span>UVA 1693</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1290'><strong><span>UVA 1290</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1694'><strong><span>UVA 1694</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12570'><strong><span>UVA 12570</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-10383'><strong><span>UVA 10383</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-12566'><strong><span>UVA 12566</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1695'><strong><span>UVA 1695</span></strong></a><a href='https://vjudge.csgrandeur.cn/problem/UVA-1696'><strong><span>UVA 1696</span></strong></a></p></div></div>
+</body>
+</html>

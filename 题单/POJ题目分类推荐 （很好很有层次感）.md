@@ -1,0 +1,202 @@
+# [POJ题目分类推荐 （很好很有层次感）](https://vjudge.csgrandeur.cn/article/6)
+
+著名题单，最初来源不详。直接来源：http://blog.csdn.net/a1dark/article/details/11714009
+
+------
+
+OJ上的一些水题(可用来练手和增加自信) ([**POJ 3299**](https://vjudge.csgrandeur.cn/problem/POJ-3299),[**POJ 2159**](https://vjudge.csgrandeur.cn/problem/POJ-2159),[**POJ 2739**](https://vjudge.csgrandeur.cn/problem/POJ-2739),[**POJ 1083**](https://vjudge.csgrandeur.cn/problem/POJ-1083),[**POJ 2262**](https://vjudge.csgrandeur.cn/problem/POJ-2262),[**POJ 1503**](https://vjudge.csgrandeur.cn/problem/POJ-1503),[**POJ 3006**](https://vjudge.csgrandeur.cn/problem/POJ-3006),[**POJ 2255**](https://vjudge.csgrandeur.cn/problem/POJ-2255),[**POJ 3094**](https://vjudge.csgrandeur.cn/problem/POJ-3094))
+
+------
+
+### 初期:
+
+##### 一.基本算法:
+
+1. 枚举. ([**POJ 1753**](https://vjudge.csgrandeur.cn/problem/POJ-1753),[**POJ 2965**](https://vjudge.csgrandeur.cn/problem/POJ-2965))
+2. 贪心([**POJ 1328**](https://vjudge.csgrandeur.cn/problem/POJ-1328),[**POJ 2109**](https://vjudge.csgrandeur.cn/problem/POJ-2109),[**POJ 2586**](https://vjudge.csgrandeur.cn/problem/POJ-2586))
+3. 递归和分治法.
+4. 递推.
+5. 构造法.([**POJ 3295**](https://vjudge.csgrandeur.cn/problem/POJ-3295))
+6. 模拟法.([**POJ 1068**](https://vjudge.csgrandeur.cn/problem/POJ-1068),[**POJ 2632**](https://vjudge.csgrandeur.cn/problem/POJ-2632),[**POJ 1573**](https://vjudge.csgrandeur.cn/problem/POJ-1573),[**POJ 2993**](https://vjudge.csgrandeur.cn/problem/POJ-2993),[**POJ 2996**](https://vjudge.csgrandeur.cn/problem/POJ-2996))
+
+##### 二.图算法:
+
+1. 图的深度优先遍历和广度优先遍历.
+2. 最短路径算法(dijkstra,bellman-ford,floyd,heap+dijkstra) ([**POJ 1860**](https://vjudge.csgrandeur.cn/problem/POJ-1860),[**POJ 3259**](https://vjudge.csgrandeur.cn/problem/POJ-3259),[**POJ 1062**](https://vjudge.csgrandeur.cn/problem/POJ-1062),[**POJ 2253**](https://vjudge.csgrandeur.cn/problem/POJ-2253),[**POJ 1125**](https://vjudge.csgrandeur.cn/problem/POJ-1125),[**POJ 2240**](https://vjudge.csgrandeur.cn/problem/POJ-2240))
+3. 最小生成树算法(prim,kruskal) ([**POJ 1789**](https://vjudge.csgrandeur.cn/problem/POJ-1789),[**POJ 2485**](https://vjudge.csgrandeur.cn/problem/POJ-2485),[**POJ 1258**](https://vjudge.csgrandeur.cn/problem/POJ-1258),[**POJ 3026**](https://vjudge.csgrandeur.cn/problem/POJ-3026))
+4. 拓扑排序 ([**POJ 1094**](https://vjudge.csgrandeur.cn/problem/POJ-1094))
+5. 二分图的最大匹配 (匈牙利算法) ([**POJ 3041**](https://vjudge.csgrandeur.cn/problem/POJ-3041),[**POJ 3020**](https://vjudge.csgrandeur.cn/problem/POJ-3020))
+6. 最大流的增广路算法(KM算法). ([**POJ 1459**](https://vjudge.csgrandeur.cn/problem/POJ-1459),[**POJ 3436**](https://vjudge.csgrandeur.cn/problem/POJ-3436))
+
+##### 三.数据结构.
+
+1. 串 ([**POJ 1035**](https://vjudge.csgrandeur.cn/problem/POJ-1035),[**POJ 3080**](https://vjudge.csgrandeur.cn/problem/POJ-3080),[**POJ 1936**](https://vjudge.csgrandeur.cn/problem/POJ-1936))
+2. 排序(快排、归并排(与逆序数有关)、堆排) ([**POJ 2388**](https://vjudge.csgrandeur.cn/problem/POJ-2388),[**POJ 2299**](https://vjudge.csgrandeur.cn/problem/POJ-2299))
+3. 简单并查集的应用.
+4. 哈希表和二分查找等高效查找法(数的Hash,串的Hash) ([**POJ 3349**](https://vjudge.csgrandeur.cn/problem/POJ-3349),[**POJ 3274**](https://vjudge.csgrandeur.cn/problem/POJ-3274),[**POJ 2151**](https://vjudge.csgrandeur.cn/problem/POJ-2151),[**POJ 1840**](https://vjudge.csgrandeur.cn/problem/POJ-1840),[**POJ 2002**](https://vjudge.csgrandeur.cn/problem/POJ-2002),[**POJ 2503**](https://vjudge.csgrandeur.cn/problem/POJ-2503))
+5. 哈夫曼树([**POJ 3253**](https://vjudge.csgrandeur.cn/problem/POJ-3253))
+6. 堆
+7. trie树(静态建树、动态建树) ([**POJ 2513**](https://vjudge.csgrandeur.cn/problem/POJ-2513))
+
+##### 四.简单搜索
+
+1. 深度优先搜索 ([**POJ 2488**](https://vjudge.csgrandeur.cn/problem/POJ-2488),[**POJ 3083**](https://vjudge.csgrandeur.cn/problem/POJ-3083),[**POJ 3009**](https://vjudge.csgrandeur.cn/problem/POJ-3009),[**POJ 1321**](https://vjudge.csgrandeur.cn/problem/POJ-1321),[**POJ 2251**](https://vjudge.csgrandeur.cn/problem/POJ-2251))
+2. 广度优先搜索([**POJ 3278**](https://vjudge.csgrandeur.cn/problem/POJ-3278),[**POJ 1426**](https://vjudge.csgrandeur.cn/problem/POJ-1426),[**POJ 3126**](https://vjudge.csgrandeur.cn/problem/POJ-3126),[**POJ 3087**](https://vjudge.csgrandeur.cn/problem/POJ-3087).[**POJ 3414**](https://vjudge.csgrandeur.cn/problem/POJ-3414))
+3. 简单搜索技巧和剪枝([**POJ 2531**](https://vjudge.csgrandeur.cn/problem/POJ-2531),[**POJ 1416**](https://vjudge.csgrandeur.cn/problem/POJ-1416),[**POJ 2676**](https://vjudge.csgrandeur.cn/problem/POJ-2676),[**POJ 1129**](https://vjudge.csgrandeur.cn/problem/POJ-1129))
+
+##### 五.动态规划
+
+1. 背包问题. ([**POJ 1837**](https://vjudge.csgrandeur.cn/problem/POJ-1837),[**POJ 1276**](https://vjudge.csgrandeur.cn/problem/POJ-1276))
+2. 型如下表的简单DP(可参考lrj的书 page149):
+   - E[j]=opt{D+w(i,j)} ([**POJ 3267**](https://vjudge.csgrandeur.cn/problem/POJ-3267),[**POJ 1836**](https://vjudge.csgrandeur.cn/problem/POJ-1836),[**POJ 1260**](https://vjudge.csgrandeur.cn/problem/POJ-1260),[**POJ 2533**](https://vjudge.csgrandeur.cn/problem/POJ-2533))
+   - E[i,j]=opt{D[i-1,j]+xi,D[i,j-1]+yj,D[i-1][j-1]+zij} (最长公共子序列) ([**POJ 3176**](https://vjudge.csgrandeur.cn/problem/POJ-3176),[**POJ 1080**](https://vjudge.csgrandeur.cn/problem/POJ-1080),[**POJ 1159**](https://vjudge.csgrandeur.cn/problem/POJ-1159))
+   - C[i,j]=w[i,j]+opt{C[i,k-1]+C[k,j]}.(最优二分检索树问题)
+
+##### 六.数学
+
+1. 组合数学:
+   - 加法原理和乘法原理.
+   - 排列组合.
+   - 递推关系.
+   - ([**POJ 3252**](https://vjudge.csgrandeur.cn/problem/POJ-3252),[**POJ 1850**](https://vjudge.csgrandeur.cn/problem/POJ-1850),[**POJ 1019**](https://vjudge.csgrandeur.cn/problem/POJ-1019),[**POJ 1942**](https://vjudge.csgrandeur.cn/problem/POJ-1942))
+2. 数论.
+   - 素数与整除问题
+   - 进制位.
+   - 同余模运算.
+   - ([**POJ 2635**](https://vjudge.csgrandeur.cn/problem/POJ-2635), [**POJ 3292**](https://vjudge.csgrandeur.cn/problem/POJ-3292),[**POJ 1845**](https://vjudge.csgrandeur.cn/problem/POJ-1845),[**POJ 2115**](https://vjudge.csgrandeur.cn/problem/POJ-2115))
+3. 计算方法.
+   - 二分法求解单调函数相关知识.([**POJ 3273**](https://vjudge.csgrandeur.cn/problem/POJ-3273),[**POJ 3258**](https://vjudge.csgrandeur.cn/problem/POJ-3258),[**POJ 1905**](https://vjudge.csgrandeur.cn/problem/POJ-1905),[**POJ 3122**](https://vjudge.csgrandeur.cn/problem/POJ-3122))
+
+##### 七.计算几何学.
+
+1. 几何公式.
+2. 叉积和点积的运用(如线段相交的判定,点到线段的距离等). ([**POJ 2031**](https://vjudge.csgrandeur.cn/problem/POJ-2031),[**POJ 1039**](https://vjudge.csgrandeur.cn/problem/POJ-1039))
+3. 多边型的简单算法(求面积)和相关判定(点在多边型内,多边型是否相交) ([**POJ 1408**](https://vjudge.csgrandeur.cn/problem/POJ-1408),[**POJ 1584**](https://vjudge.csgrandeur.cn/problem/POJ-1584))
+4. 凸包. ([**POJ 2187**](https://vjudge.csgrandeur.cn/problem/POJ-2187),[**POJ 1113**](https://vjudge.csgrandeur.cn/problem/POJ-1113))
+
+------
+
+### 中级:
+
+##### 一.基本算法:
+
+1. C++的标准模版库的应用. ([**POJ 3096**](https://vjudge.csgrandeur.cn/problem/POJ-3096),[**POJ 3007**](https://vjudge.csgrandeur.cn/problem/POJ-3007))
+2. 较为复杂的模拟题的训练([**POJ 3393**](https://vjudge.csgrandeur.cn/problem/POJ-3393),[**POJ 1472**](https://vjudge.csgrandeur.cn/problem/POJ-1472),[**POJ 3371**](https://vjudge.csgrandeur.cn/problem/POJ-3371),[**POJ 1027**](https://vjudge.csgrandeur.cn/problem/POJ-1027),[**POJ 2706**](https://vjudge.csgrandeur.cn/problem/POJ-2706))
+
+##### 二.图算法:
+
+1. 差分约束系统的建立和求解. ([**POJ 1201**](https://vjudge.csgrandeur.cn/problem/POJ-1201),[**POJ 2983**](https://vjudge.csgrandeur.cn/problem/POJ-2983))
+2. 最小费用最大流([**POJ 2516**](https://vjudge.csgrandeur.cn/problem/POJ-2516),[**POJ 2195**](https://vjudge.csgrandeur.cn/problem/POJ-2195))
+3. 双连通分量([**POJ 2942**](https://vjudge.csgrandeur.cn/problem/POJ-2942))
+4. 强连通分支及其缩点.([**POJ 2186**](https://vjudge.csgrandeur.cn/problem/POJ-2186))
+5. 图的割边和割点([**POJ 3352**](https://vjudge.csgrandeur.cn/problem/POJ-3352))
+6. 最小割模型、网络流规约([**POJ 3308**](https://vjudge.csgrandeur.cn/problem/POJ-3308))
+
+##### 三.数据结构.
+
+1. 线段树. ([**POJ 2528**](https://vjudge.csgrandeur.cn/problem/POJ-2528),[**POJ 2828**](https://vjudge.csgrandeur.cn/problem/POJ-2828),[**POJ 2777**](https://vjudge.csgrandeur.cn/problem/POJ-2777),[**POJ 2886**](https://vjudge.csgrandeur.cn/problem/POJ-2886),[**POJ 2750**](https://vjudge.csgrandeur.cn/problem/POJ-2750))
+2. 静态二叉检索树. ([**POJ 2482**](https://vjudge.csgrandeur.cn/problem/POJ-2482),[**POJ 2352**](https://vjudge.csgrandeur.cn/problem/POJ-2352))
+3. 树状树组([**POJ 1195**](https://vjudge.csgrandeur.cn/problem/POJ-1195),[**POJ 3321**](https://vjudge.csgrandeur.cn/problem/POJ-3321))
+4. RMQ. ([**POJ 3264**](https://vjudge.csgrandeur.cn/problem/POJ-3264),[**POJ 3368**](https://vjudge.csgrandeur.cn/problem/POJ-3368))
+5. 并查集的高级应用. ([**POJ 1703**](https://vjudge.csgrandeur.cn/problem/POJ-1703),[**POJ 2492**](https://vjudge.csgrandeur.cn/problem/POJ-2492))
+6. KMP算法. ([**POJ 1961**](https://vjudge.csgrandeur.cn/problem/POJ-1961),[**POJ 2406**](https://vjudge.csgrandeur.cn/problem/POJ-2406))
+
+##### 四.搜索
+
+1. 最优化剪枝和可行性剪枝
+2. 搜索的技巧和优化 ([**POJ 3411**](https://vjudge.csgrandeur.cn/problem/POJ-3411),[**POJ 1724**](https://vjudge.csgrandeur.cn/problem/POJ-1724))
+3. 记忆化搜索([**POJ 3373**](https://vjudge.csgrandeur.cn/problem/POJ-3373),[**POJ 1691**](https://vjudge.csgrandeur.cn/problem/POJ-1691))
+
+##### 五.动态规划
+
+1. 较为复杂的动态规划(如动态规划解特别的施行商问题等) ([**POJ 1191**](https://vjudge.csgrandeur.cn/problem/POJ-1191),[**POJ 1054**](https://vjudge.csgrandeur.cn/problem/POJ-1054),[**POJ 3280**](https://vjudge.csgrandeur.cn/problem/POJ-3280),[**POJ 2029**](https://vjudge.csgrandeur.cn/problem/POJ-2029),[**POJ 2948**](https://vjudge.csgrandeur.cn/problem/POJ-2948),[**POJ 1925**](https://vjudge.csgrandeur.cn/problem/POJ-1925),[**POJ 3034**](https://vjudge.csgrandeur.cn/problem/POJ-3034))
+2. 记录状态的动态规划. ([**POJ 3254**](https://vjudge.csgrandeur.cn/problem/POJ-3254),[**POJ 2411**](https://vjudge.csgrandeur.cn/problem/POJ-2411),[**POJ 1185**](https://vjudge.csgrandeur.cn/problem/POJ-1185))
+3. 树型动态规划([**POJ 2057**](https://vjudge.csgrandeur.cn/problem/POJ-2057),[**POJ 1947**](https://vjudge.csgrandeur.cn/problem/POJ-1947),[**POJ 2486**](https://vjudge.csgrandeur.cn/problem/POJ-2486),[**POJ 3140**](https://vjudge.csgrandeur.cn/problem/POJ-3140))
+
+##### 六.数学
+
+1. 组合数学:
+   - 容斥原理.
+   - 抽屉原理.
+   - 置换群与Polya定理([**POJ 1286**](https://vjudge.csgrandeur.cn/problem/POJ-1286),[**POJ 2409**](https://vjudge.csgrandeur.cn/problem/POJ-2409),[**POJ 3270**](https://vjudge.csgrandeur.cn/problem/POJ-3270),[**POJ 1026**](https://vjudge.csgrandeur.cn/problem/POJ-1026)).
+   - 递推关系和母函数.
+2. 数学.
+   - 高斯消元法([**POJ 2947**](https://vjudge.csgrandeur.cn/problem/POJ-2947),[**POJ 1487**](https://vjudge.csgrandeur.cn/problem/POJ-1487),[**POJ 2065**](https://vjudge.csgrandeur.cn/problem/POJ-2065),[**POJ 1166**](https://vjudge.csgrandeur.cn/problem/POJ-1166),[**POJ 1222**](https://vjudge.csgrandeur.cn/problem/POJ-1222))
+   - 概率问题. ([**POJ 3071**](https://vjudge.csgrandeur.cn/problem/POJ-3071),[**POJ 3440**](https://vjudge.csgrandeur.cn/problem/POJ-3440))
+   - GCD、扩展的欧几里德(中国剩余定理) ([**POJ 3101**](https://vjudge.csgrandeur.cn/problem/POJ-3101))
+3. 计算方法.
+   - 0/1分数规划. ([**POJ 2976**](https://vjudge.csgrandeur.cn/problem/POJ-2976))
+   - 三分法求解单峰(单谷)的极值.
+   - 矩阵法([**POJ 3150**](https://vjudge.csgrandeur.cn/problem/POJ-3150),[**POJ 3422**](https://vjudge.csgrandeur.cn/problem/POJ-3422),[**POJ 3070**](https://vjudge.csgrandeur.cn/problem/POJ-3070))
+   - 迭代逼近([**POJ 3301**](https://vjudge.csgrandeur.cn/problem/POJ-3301))
+4. 随机化算法([**POJ 3318**](https://vjudge.csgrandeur.cn/problem/POJ-3318),[**POJ 2454**](https://vjudge.csgrandeur.cn/problem/POJ-2454))
+5. 杂题. ([**POJ 1870**](https://vjudge.csgrandeur.cn/problem/POJ-1870),[**POJ 3296**](https://vjudge.csgrandeur.cn/problem/POJ-3296),[**POJ 3286**](https://vjudge.csgrandeur.cn/problem/POJ-3286),[**POJ 1095**](https://vjudge.csgrandeur.cn/problem/POJ-1095))
+
+##### 七.计算几何学.
+
+1. 坐标离散化.
+2. 扫描线算法(例如求矩形的面积和周长并,常和线段树或堆一起使用). ([**POJ 1765**](https://vjudge.csgrandeur.cn/problem/POJ-1765),[**POJ 1177**](https://vjudge.csgrandeur.cn/problem/POJ-1177),[**POJ 1151**](https://vjudge.csgrandeur.cn/problem/POJ-1151),[**POJ 3277**](https://vjudge.csgrandeur.cn/problem/POJ-3277),[**POJ 2280**](https://vjudge.csgrandeur.cn/problem/POJ-2280),[**POJ 3004**](https://vjudge.csgrandeur.cn/problem/POJ-3004))
+3. 多边形的内核(半平面交)([**POJ 3130**](https://vjudge.csgrandeur.cn/problem/POJ-3130),[**POJ 3335**](https://vjudge.csgrandeur.cn/problem/POJ-3335))
+4. 几何工具的综合应用.([**POJ 1819**](https://vjudge.csgrandeur.cn/problem/POJ-1819),[**POJ 1066**](https://vjudge.csgrandeur.cn/problem/POJ-1066),[**POJ 2043**](https://vjudge.csgrandeur.cn/problem/POJ-2043),[**POJ 3227**](https://vjudge.csgrandeur.cn/problem/POJ-3227),[**POJ 2165**](https://vjudge.csgrandeur.cn/problem/POJ-2165),[**POJ 3429**](https://vjudge.csgrandeur.cn/problem/POJ-3429))
+
+------
+
+### 高级:
+
+##### 一.基本算法要求:
+
+1. 代码快速写成,精简但不失风格 ([**POJ 2525**](https://vjudge.csgrandeur.cn/problem/POJ-2525),[**POJ 1684**](https://vjudge.csgrandeur.cn/problem/POJ-1684),[**POJ 1421**](https://vjudge.csgrandeur.cn/problem/POJ-1421),[**POJ 1048**](https://vjudge.csgrandeur.cn/problem/POJ-1048),[**POJ 2050**](https://vjudge.csgrandeur.cn/problem/POJ-2050),[**POJ 3306**](https://vjudge.csgrandeur.cn/problem/POJ-3306))
+2. 保证正确性和高效性. [**POJ 3434**](https://vjudge.csgrandeur.cn/problem/POJ-3434)
+
+##### 二.图算法:
+
+1. 度限制最小生成树和第K最短路. ([**POJ 1639**](https://vjudge.csgrandeur.cn/problem/POJ-1639))
+2. 最短路,最小生成树,二分图,最大流问题的相关理论(主要是模型建立和求解) ([**POJ 3155**](https://vjudge.csgrandeur.cn/problem/POJ-3155), [**POJ 2112**](https://vjudge.csgrandeur.cn/problem/POJ-2112),[**POJ 1966**](https://vjudge.csgrandeur.cn/problem/POJ-1966),[**POJ 3281**](https://vjudge.csgrandeur.cn/problem/POJ-3281),[**POJ 1087**](https://vjudge.csgrandeur.cn/problem/POJ-1087),[**POJ 2289**](https://vjudge.csgrandeur.cn/problem/POJ-2289),[**POJ 3216**](https://vjudge.csgrandeur.cn/problem/POJ-3216),[**POJ 2446**](https://vjudge.csgrandeur.cn/problem/POJ-2446) )
+3. 最优比率生成树. ([**POJ 2728**](https://vjudge.csgrandeur.cn/problem/POJ-2728))
+4. 最小树形图([**POJ 3164**](https://vjudge.csgrandeur.cn/problem/POJ-3164))
+5. 次小生成树.
+6. 无向图、有向图的最小环
+
+##### 三.数据结构.
+
+1. trie图的建立和应用. ([**POJ 2778**](https://vjudge.csgrandeur.cn/problem/POJ-2778))
+2. LCA和RMQ问题(LCA(最近公共祖先问题) 有离线算法(并查集+dfs) 和 在线算法
+   (RMQ+dfs)).([**POJ 1330**](https://vjudge.csgrandeur.cn/problem/POJ-1330))
+3. 双端队列和它的应用(维护一个单调的队列,常常在动态规划中起到优化状态转移
+   的目的). ([**POJ 2823**](https://vjudge.csgrandeur.cn/problem/POJ-2823))
+4. 左偏树(可合并堆).
+5. 后缀树(非常有用的数据结构,也是赛区考题的热点). ([**POJ 3415**](https://vjudge.csgrandeur.cn/problem/POJ-3415),[**POJ 3294**](https://vjudge.csgrandeur.cn/problem/POJ-3294))
+
+##### 四.搜索
+
+1. 较麻烦的搜索题目训练([**POJ 1069**](https://vjudge.csgrandeur.cn/problem/POJ-1069),[**POJ 3322**](https://vjudge.csgrandeur.cn/problem/POJ-3322),[**POJ 1475**](https://vjudge.csgrandeur.cn/problem/POJ-1475),[**POJ 1924**](https://vjudge.csgrandeur.cn/problem/POJ-1924),[**POJ 2049**](https://vjudge.csgrandeur.cn/problem/POJ-2049),[**POJ 3426**](https://vjudge.csgrandeur.cn/problem/POJ-3426))
+2. 广搜的状态优化:利用M进制数存储状态、转化为串用hash表判重、按位压缩存储
+   状态、双向广搜、A*算法. ([**POJ 1768**](https://vjudge.csgrandeur.cn/problem/POJ-1768),[**POJ 1184**](https://vjudge.csgrandeur.cn/problem/POJ-1184),[**POJ 1872**](https://vjudge.csgrandeur.cn/problem/POJ-1872),[**POJ 1324**](https://vjudge.csgrandeur.cn/problem/POJ-1324),[**POJ 2046**](https://vjudge.csgrandeur.cn/problem/POJ-2046),[**POJ 1482**](https://vjudge.csgrandeur.cn/problem/POJ-1482))
+3. 深搜的优化:尽量用位运算、一定要加剪枝、函数参数尽可能少、层数不易过大
+   、可以考虑双向搜索或者是轮换搜索、IDA*算法. ([**POJ 3131**](https://vjudge.csgrandeur.cn/problem/POJ-3131),[**POJ 2870**](https://vjudge.csgrandeur.cn/problem/POJ-2870),[**POJ 2286**](https://vjudge.csgrandeur.cn/problem/POJ-2286))
+
+##### 五.动态规划
+
+1. 需要用数据结构优化的动态规划. ([**POJ 2754**](https://vjudge.csgrandeur.cn/problem/POJ-2754),[**POJ 3378**](https://vjudge.csgrandeur.cn/problem/POJ-3378),[**POJ 3017**](https://vjudge.csgrandeur.cn/problem/POJ-3017))
+2. 四边形不等式理论.
+3. 较难的状态DP([**POJ 3133**](https://vjudge.csgrandeur.cn/problem/POJ-3133))
+
+##### 六.数学
+
+1. 组合数学.
+   - MoBius反演([**POJ 2888**](https://vjudge.csgrandeur.cn/problem/POJ-2888),[**POJ 2154**](https://vjudge.csgrandeur.cn/problem/POJ-2154))
+   - 偏序关系理论.
+2. 博奕论.
+   - 极大极小过程([**POJ 3317**](https://vjudge.csgrandeur.cn/problem/POJ-3317),[**POJ 1085**](https://vjudge.csgrandeur.cn/problem/POJ-1085))
+   - Nim问题.
+
+##### 七.计算几何学.
+
+1. 半平面求交([**POJ 3384**](https://vjudge.csgrandeur.cn/problem/POJ-3384),[**POJ 2540**](https://vjudge.csgrandeur.cn/problem/POJ-2540))
+2. 可视图的建立([**POJ 2966**](https://vjudge.csgrandeur.cn/problem/POJ-2966))
+3. 点集最小圆覆盖.
+4. 对踵点([**POJ 2079**](https://vjudge.csgrandeur.cn/problem/POJ-2079))
+
+##### 八.综合题.
+
+([**POJ 3109**](https://vjudge.csgrandeur.cn/problem/POJ-3109),[**POJ 1478**](https://vjudge.csgrandeur.cn/problem/POJ-1478),[**POJ 1462**](https://vjudge.csgrandeur.cn/problem/POJ-1462),[**POJ 2729**](https://vjudge.csgrandeur.cn/problem/POJ-2729),[**POJ 2048**](https://vjudge.csgrandeur.cn/problem/POJ-2048),[**POJ 3336**](https://vjudge.csgrandeur.cn/problem/POJ-3336),[**POJ 3315**](https://vjudge.csgrandeur.cn/problem/POJ-3315),[**POJ 2148**](https://vjudge.csgrandeur.cn/problem/POJ-2148),[**POJ 1263**](https://vjudge.csgrandeur.cn/problem/POJ-1263))
